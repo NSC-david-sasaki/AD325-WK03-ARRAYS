@@ -20,6 +20,10 @@ list with negative values [ -1, 0, 2]
 '''
 import sys
 
+'''
+Time complexity O(N^2)
+Space complexity O(1)
+'''
 def reorder(int_order)->None:
     index = 0
     while index < len(int_order):
@@ -52,7 +56,7 @@ def repeating_zeros_test():
     reorder(inv)
     print("before processing:"+str(initial))
     print("after processing:"+str(inv))
-    assert inv == [1,2,3,0,0,0,0,2], f"inventory was {initial} and is now {inv}"
+    assert inv == [1,2,3,0,0,0,0,0], f"inventory was {initial} and is now {inv}"
 def negative_test():
     inv = [-1, 0, 2, 2]
     reorder(inv)
@@ -64,7 +68,7 @@ def test_runner(test_list):
             test()
             print(f"{test.__name__} passed")
         except AssertionError as e:
-            print(f"{test.__name__} failed")
+            print(f"{test.__name__} failed {e}")
 
 
 def main():
